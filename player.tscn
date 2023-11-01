@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhtdp6s1d4b2v"]
+[gd_scene load_steps=8 format=3 uid="uid://bv5fxvi0y6jyi"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_uikgj"]
 [ext_resource type="Texture2D" uid="uid://b75hhwkw87r6c" path="res://art/playerGrey_up1.png" id="1_y082c"]
@@ -42,6 +42,9 @@ script = ExtResource("1_uikgj")
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8snrg")
 animation = &"walk"
+frame_progress = 0.859615
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_81vvb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
