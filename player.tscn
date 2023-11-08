@@ -1,19 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv5fxvi0y6jyi"]
+[gd_scene load_steps=8 format=3 uid="uid://cgnvr76ry6gek"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_uikgj"]
-[ext_resource type="Texture2D" uid="uid://b75hhwkw87r6c" path="res://art/playerGrey_up1.png" id="1_y082c"]
-[ext_resource type="Texture2D" uid="uid://dt5pgqsbpnojb" path="res://art/playerGrey_up2.png" id="2_nwcxu"]
-[ext_resource type="Texture2D" uid="uid://ywm1rr3etg7e" path="res://art/playerGrey_walk1.png" id="3_mfyig"]
-[ext_resource type="Texture2D" uid="uid://cxsy8dbuhgelm" path="res://art/playerGrey_walk2.png" id="4_ltepl"]
+[ext_resource type="Texture2D" uid="uid://mo4epjbu3f2t" path="res://art/playerGrey_up1.png" id="1_veewe"]
+[ext_resource type="Script" path="res://player.gd" id="1_ydxo2"]
+[ext_resource type="Texture2D" uid="uid://db2eh35het02a" path="res://art/playerGrey_up2.png" id="2_ycxwp"]
+[ext_resource type="Texture2D" uid="uid://d37gptcy1cymx" path="res://art/playerGrey_walk1.png" id="3_6joym"]
+[ext_resource type="Texture2D" uid="uid://b355abybpvvr8" path="res://art/playerGrey_walk2.png" id="4_vsrqs"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8snrg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_npxiw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_y082c")
+"texture": ExtResource("1_veewe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_nwcxu")
+"texture": ExtResource("2_ycxwp")
 }],
 "loop": true,
 "name": &"up",
@@ -21,30 +21,30 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_mfyig")
+"texture": ExtResource("3_6joym")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ltepl")
+"texture": ExtResource("4_vsrqs")
 }],
 "loop": true,
 "name": &"walk",
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_81vvb"]
-radius = 26.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ogeik"]
+radius = 27.0
 height = 68.0
 
 [node name="Player" type="Area2D"]
-script = ExtResource("1_uikgj")
+script = ExtResource("1_ydxo2")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_8snrg")
+sprite_frames = SubResource("SpriteFrames_npxiw")
 animation = &"walk"
-frame_progress = 0.859615
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_81vvb")
+shape = SubResource("CapsuleShape2D_ogeik")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
